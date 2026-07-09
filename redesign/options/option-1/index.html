@@ -1,0 +1,831 @@
+<title>Sovereign Agricultural Group — Home</title>
+<meta name="description" content="Sovereign Agricultural Group: private equity investment preserving American family farms and ranches.">
+<style>
+
+  /* ============================================================
+     SOVEREIGN AGRICULTURAL GROUP — Option 1: Institutional Editorial
+     Deep field green + cream + harvest gold. Serif display, sans body.
+     ============================================================ */
+
+  :root{
+    --green-deep:   #1d3a12;
+    --green-mid:    #2a4d1a;
+    --green-field:  #325C00;
+    --gold:         #C3921C;
+    --gold-light:   #d9ac3f;
+    --cream:        #f7f3ea;
+    --cream-2:      #efe8d8;
+    --ink:          #1F2124;
+    --ink-soft:     #3A3A3A;
+    --white:        #ffffff;
+    --rule:         rgba(195,146,28,0.55);
+
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --maxw: 1240px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+
+  h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; letter-spacing:0.01em; }
+
+  /* small-caps section label */
+  .kicker{
+    display:flex; align-items:center; gap:14px;
+    font-family:var(--sans);
+    font-size:12.5px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--gold);
+    margin-bottom:22px;
+  }
+  .kicker::before{
+    content:"";
+    width:34px; height:1px;
+    background:var(--gold);
+    display:block;
+  }
+  .kicker.center{ justify-content:center; }
+  .kicker .num{ font-family:var(--serif); font-style:italic; margin-right:2px; }
+
+  .rule{
+    width:64px; height:1px;
+    background:var(--gold);
+    margin:26px 0;
+    border:0;
+  }
+  .rule.center{ margin-left:auto; margin-right:auto; }
+
+  /* ============================= HEADER ============================= */
+  header.site{
+    position:sticky; top:0; z-index:500;
+    background:rgba(29,58,18,0.97);
+    border-bottom:1px solid rgba(195,146,28,0.35);
+    transition:padding .25s ease;
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:var(--maxw); margin:0 auto;
+    gap:20px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:38px; width:auto; }
+  .brand-text{ font-family:var(--serif); color:var(--cream); line-height:1.05; }
+  .brand-text .line1{ font-size:19px; letter-spacing:0.06em; }
+  .brand-text .line2{ font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold-light); margin-top:3px; }
+
+  nav.primary{ display:flex; align-items:center; gap:34px; }
+  nav.primary a{
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--cream); opacity:0.86;
+    position:relative;
+    padding:6px 0;
+  }
+  nav.primary a:hover{ opacity:1; }
+  nav.primary a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--gold); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.primary a:hover::after{ transform:scaleX(1); }
+
+  .btn-cta{
+    display:inline-block;
+    font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--green-deep) !important;
+    background:var(--gold);
+    padding:12px 22px;
+    border:1px solid var(--gold);
+    white-space:nowrap;
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-cta:hover{ background:transparent; color:var(--cream) !important; }
+
+  .btn-outline{
+    display:inline-block;
+    font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--cream);
+    background:transparent;
+    padding:12px 26px;
+    border:1px solid var(--gold);
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-outline:hover{ background:var(--gold); color:var(--green-deep); }
+
+  .btn-outline-dark{
+    display:inline-block;
+    font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--green-deep);
+    background:transparent;
+    padding:12px 26px;
+    border:1px solid var(--green-deep);
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-outline-dark:hover{ background:var(--green-deep); color:var(--cream); }
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column; gap:5px;
+    background:none; border:0; cursor:pointer; padding:6px;
+  }
+  .menu-toggle span{ width:24px; height:1.5px; background:var(--cream); display:block; }
+
+  /* ============================= HERO ============================= */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(20,36,12,0.55) 0%, rgba(18,30,10,0.72) 55%, rgba(13,22,8,0.93) 100%),
+      url('assets/hero-farmland.jpg') center 30% / cover no-repeat;
+  }
+  .hero-inner{
+    width:100%;
+    max-width:var(--maxw); margin:0 auto;
+    padding:0 32px 96px;
+    color:var(--cream);
+  }
+  .hero .kicker{ color:var(--gold-light); }
+  .hero .kicker::before{ background:var(--gold-light); }
+  .hero h1{
+    font-size:clamp(40px, 6.4vw, 84px);
+    line-height:1.04;
+    color:var(--cream);
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold-light);
+  }
+  .hero .dek{
+    margin-top:26px;
+    max-width:44ch;
+    font-size:18px;
+    line-height:1.65;
+    color:rgba(247,243,234,0.86);
+    font-weight:300;
+  }
+  .hero .actions{
+    margin-top:40px;
+    display:flex; gap:18px; flex-wrap:wrap;
+  }
+  .hero .scroll-cue{
+    position:absolute; right:32px; bottom:38px;
+    writing-mode:vertical-rl;
+    font-size:11px; letter-spacing:0.3em; text-transform:uppercase;
+    color:rgba(247,243,234,0.55);
+    display:flex; align-items:center; gap:12px;
+  }
+  .hero .scroll-cue::after{
+    content:""; width:1px; height:52px; background:rgba(247,243,234,0.4);
+  }
+
+  /* ============================= MISSION / WHO WE ARE ============================= */
+  section.mission{
+    background:var(--cream);
+    padding:120px 0 100px;
+  }
+  .mission-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:80px;
+    align-items:start;
+  }
+  .mission-head h2{
+    font-size:clamp(32px, 3.6vw, 46px);
+    line-height:1.14;
+    color:var(--green-deep);
+    max-width:14ch;
+  }
+  .mission-copy{
+    columns:1;
+    font-size:16.5px;
+    line-height:1.85;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .mission-copy p + p{ margin-top:18px; }
+  .mission-copy p:first-child::first-letter{
+    font-family:var(--serif);
+    font-size:58px;
+    line-height:0.78;
+    float:left;
+    padding:6px 10px 0 0;
+    color:var(--gold);
+  }
+
+  .pull-figure{
+    position:relative;
+  }
+  .pull-figure img{
+    width:100%; height:520px; object-fit:cover;
+    filter:saturate(0.92) contrast(1.03);
+  }
+  .pull-figure .cap{
+    margin-top:14px;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink-soft);
+    opacity:0.7;
+  }
+
+  .pull-quote{
+    margin-top:56px;
+    border-left:2px solid var(--gold);
+    padding:6px 0 6px 30px;
+  }
+  .pull-quote p{
+    font-family:var(--serif); font-style:italic;
+    font-size:21px; line-height:1.5;
+    color:var(--green-deep);
+    max-width:34ch;
+  }
+
+  /* Stat row */
+  .stat-row{
+    margin-top:96px;
+    background:var(--green-deep);
+    color:var(--cream);
+    position:relative;
+  }
+  .stat-row::before{
+    content:"";
+    position:absolute; inset:0 0 auto 0; height:1px; background:var(--gold);
+  }
+  .stat-row-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 32px;
+    display:grid; grid-template-columns:repeat(3,1fr);
+  }
+  .stat{
+    padding:64px 24px;
+    text-align:center;
+    border-left:1px solid rgba(195,146,28,0.3);
+  }
+  .stat:first-child{ border-left:0; }
+  .stat .num{
+    font-family:var(--serif);
+    font-size:clamp(40px, 4.4vw, 60px);
+    color:var(--gold-light);
+    line-height:1;
+  }
+  .stat .label{
+    margin-top:16px;
+    font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    color:rgba(247,243,234,0.78);
+  }
+
+  /* ============================= HOW WE OPERATE ============================= */
+  section.operate{
+    background:var(--cream-2);
+    padding:120px 0;
+  }
+  .operate-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:80px;
+    align-items:center;
+  }
+  .operate-figure{ position:relative; }
+  .operate-figure img{
+    width:100%; height:600px; object-fit:cover;
+    filter:saturate(0.92) contrast(1.02);
+  }
+  .operate-figure .frame{
+    position:absolute; top:22px; left:22px; right:-22px; bottom:-22px;
+    border:1px solid var(--gold);
+    z-index:-1;
+  }
+  .operate-figure-wrap{ position:relative; }
+
+  .operate-head h2{
+    font-size:clamp(30px, 3.4vw, 42px);
+    color:var(--green-deep);
+    max-width:16ch;
+    line-height:1.16;
+  }
+  .operate-copy{
+    margin-top:26px;
+    font-size:16px; line-height:1.85;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+
+  .principles{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .principle{
+    padding:26px 26px 0 0;
+    border-right:1px solid var(--rule);
+  }
+  .principle:last-child{ border-right:0; }
+  .principle .roman{
+    font-family:var(--serif); font-style:italic;
+    color:var(--gold);
+    font-size:14px;
+    margin-bottom:10px;
+    display:block;
+  }
+  .principle h4{
+    font-size:17px; color:var(--green-deep);
+    line-height:1.3;
+  }
+  .principle p{
+    margin:10px 0 0;
+    font-size:13.5px; line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  /* ============================= CORE AREAS ============================= */
+  section.areas{
+    background:var(--green-deep);
+    color:var(--cream);
+    padding:120px 0;
+  }
+  .areas .kicker{ color:var(--gold-light); justify-content:center; }
+  .areas .kicker::before{ background:var(--gold-light); }
+  .areas-head{ text-align:center; max-width:760px; margin:0 auto 76px; }
+  .areas-head h2{
+    font-size:clamp(30px, 3.6vw, 44px);
+    color:var(--cream);
+    line-height:1.18;
+  }
+
+  .areas-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid rgba(195,146,28,0.3);
+    border-left:1px solid rgba(195,146,28,0.3);
+  }
+  .area-card{
+    padding:44px 38px;
+    border-right:1px solid rgba(195,146,28,0.3);
+    border-bottom:1px solid rgba(195,146,28,0.3);
+    transition:background .25s ease;
+  }
+  .area-card:hover{ background:rgba(195,146,28,0.08); }
+  .area-card .idx{
+    font-family:var(--serif); font-style:italic;
+    color:var(--gold);
+    font-size:14px;
+    display:block; margin-bottom:20px;
+  }
+  .area-card h3{
+    font-size:21px; color:var(--cream);
+    line-height:1.3;
+  }
+  .area-card p{
+    margin:14px 0 0;
+    font-size:14.5px; line-height:1.75;
+    color:rgba(247,243,234,0.78);
+  }
+
+  /* ============================= INVESTOR STRIP ============================= */
+  section.investor-strip{
+    background:var(--cream);
+    padding:110px 0;
+  }
+  .investor-inner{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:60px;
+    align-items:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:56px 0;
+  }
+  .investor-inner h2{
+    font-size:clamp(26px, 3vw, 36px);
+    color:var(--green-deep);
+    max-width:20ch;
+    line-height:1.22;
+  }
+  .investor-inner p{
+    margin-top:16px;
+    font-size:15.5px; line-height:1.75;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+
+  /* ============================= SELL YOUR BUSINESS CTA BAND ============================= */
+  section.sell-cta{
+    position:relative;
+    padding:150px 0;
+    background:
+      linear-gradient(120deg, rgba(29,58,18,0.93) 0%, rgba(29,58,18,0.8) 45%, rgba(29,58,18,0.93) 100%),
+      url('assets/grain-silo.webp') center 60% / cover no-repeat;
+    color:var(--cream);
+    text-align:center;
+  }
+  .sell-cta .kicker{ justify-content:center; color:var(--gold-light); }
+  .sell-cta .kicker::before{ background:var(--gold-light); }
+  .sell-cta h2{
+    font-size:clamp(32px, 4.6vw, 58px);
+    max-width:18ch;
+    margin:0 auto;
+    line-height:1.14;
+    color:var(--cream);
+  }
+  .sell-cta p{
+    margin:26px auto 0;
+    max-width:52ch;
+    font-size:17px; line-height:1.75;
+    color:rgba(247,243,234,0.85);
+  }
+  .sell-cta .actions{
+    margin-top:44px;
+    display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+  }
+
+  /* ============================= FOOTER ============================= */
+  footer.site{
+    background:var(--ink);
+    color:rgba(247,243,234,0.82);
+    padding:88px 0 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+    gap:50px;
+    padding-bottom:64px;
+    border-bottom:1px solid rgba(195,146,28,0.25);
+  }
+  .footer-brand{ display:flex; align-items:flex-start; gap:14px; }
+  .footer-brand img{ height:40px; width:auto; margin-top:2px; }
+  .footer-brand .line1{ font-family:var(--serif); font-size:19px; color:var(--cream); letter-spacing:0.05em; }
+  .footer-brand .line2{ font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-light); margin-top:4px; }
+  .footer-tag{
+    margin-top:18px;
+    font-size:14px; line-height:1.7;
+    color:rgba(247,243,234,0.6);
+    max-width:34ch;
+  }
+  .footer-col h5{
+    font-family:var(--sans);
+    font-size:11.5px; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--gold-light);
+    margin:0 0 20px;
+  }
+  .footer-col a, .footer-col p{
+    display:block;
+    font-size:14px; line-height:2.1;
+    color:rgba(247,243,234,0.78);
+  }
+  .footer-col a:hover{ color:var(--gold-light); }
+  .footer-offices p{ line-height:1.7; margin-bottom:14px; font-size:13.5px; color:rgba(247,243,234,0.65); }
+
+  .footer-social{ display:flex; gap:14px; margin-top:22px; }
+  .footer-social a{
+    width:34px; height:34px;
+    border:1px solid rgba(195,146,28,0.4);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px;
+    color:var(--gold-light);
+    transition:background .2s ease, color .2s ease;
+  }
+  .footer-social a:hover{ background:var(--gold); color:var(--ink); }
+
+  .footer-bottom{
+    max-width:var(--maxw); margin:0 auto; padding:26px 32px 30px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; color:rgba(247,243,234,0.5);
+    flex-wrap:wrap; gap:12px;
+  }
+  .footer-bottom a{ color:rgba(247,243,234,0.6); }
+  .footer-bottom a:hover{ color:var(--gold-light); }
+
+  /* ============================= RESPONSIVE ============================= */
+  @media (max-width:1024px){
+    .mission-grid, .operate-grid{ grid-template-columns:1fr; gap:52px; }
+    .operate-grid{ direction:rtl; }
+    .operate-grid > *{ direction:ltr; }
+    .pull-figure img, .operate-figure img{ height:420px; }
+    .areas-grid{ grid-template-columns:repeat(2,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+    .investor-inner{ grid-template-columns:1fr; text-align:left; }
+  }
+
+  @media (max-width:860px){
+    nav.primary{
+      position:fixed; inset:0 0 0 auto;
+      width:min(320px, 84vw); height:100vh;
+      background:var(--green-deep);
+      flex-direction:column; align-items:flex-start;
+      gap:0;
+      padding:100px 32px 40px;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      border-left:1px solid rgba(195,146,28,0.35);
+    }
+    nav.primary.open{ transform:translateX(0); }
+    nav.primary a{
+      width:100%; padding:16px 0;
+      border-bottom:1px solid rgba(195,146,28,0.18);
+      font-size:14px;
+    }
+    nav.primary .btn-cta{ margin-top:20px; text-align:center; width:100%; }
+    .menu-toggle{ display:flex; }
+    .stat-row-inner{ grid-template-columns:1fr; }
+    .stat{ border-left:0; border-top:1px solid rgba(195,146,28,0.3); }
+    .stat:first-child{ border-top:0; }
+    .principles{ grid-template-columns:1fr; }
+    .principle{ border-right:0; border-bottom:1px solid var(--rule); padding-bottom:22px; }
+    .principle:first-child{ padding-top:26px; }
+  }
+
+  @media (max-width:640px){
+    .wrap, .header-inner, .hero-inner, .investor-inner, .footer-bottom{ padding-left:20px; padding-right:20px; }
+    .hero{ min-height:88vh; }
+    .hero-inner{ padding-bottom:64px; }
+    .hero .actions{ flex-direction:column; }
+    .hero .actions a{ text-align:center; }
+    section.mission, section.operate, section.areas, section.investor-strip, .sell-cta{ padding-top:76px; padding-bottom:76px; }
+    .areas-grid{ grid-template-columns:1fr; }
+    .stat-row-inner{ padding:0 20px; }
+    .footer-grid{ grid-template-columns:1fr; padding:0 20px 48px; gap:40px; }
+    .footer-brand, .footer-tag{ padding-left:0; }
+    header .header-inner{ padding:14px 20px; }
+    .brand-text .line1{ font-size:16px; }
+    .mission-copy p:first-child::first-letter{ font-size:44px; }
+    .hero .scroll-cue{ display:none; }
+  }
+</style>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="/" class="brand">
+      <img src="assets/sovereign-mark-gold.png" alt="Sovereign Agricultural Group mark">
+      <span class="brand-text">
+        <span class="line1">SOVEREIGN</span>
+        <span class="line2">Agricultural Group</span>
+      </span>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="/">Home</a>
+      <a href="/who-we-are/">Who We Are</a>
+      <a href="/what-we-do/">What We Do</a>
+      <a href="/partner-with-us/">Partner With Us</a>
+      <a href="/investors/">Investors</a>
+      <a href="/contact/">Contact</a>
+      <a href="/sell-your-business/" class="btn-cta">Sell Your Business</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker"><span class="num">I.</span> Preserving American Agriculture</div>
+      <h1>Preserving the Heritage of <em>the American Farmer.</em></h1>
+      <p class="dek">Where sustainable agriculture meets responsible investing. Sovereign Agricultural Group is a private equity firm dedicated to keeping American family farms and ranches in American hands.</p>
+      <div class="actions">
+        <a href="/partner-with-us/" class="btn-outline">Partner With Us</a>
+        <a href="/investors/" class="btn-outline">Investor Information</a>
+      </div>
+    </div>
+    <div class="scroll-cue">Scroll</div>
+  </section>
+
+  <!-- ============================= MISSION / WHO WE ARE ============================= -->
+  <section class="mission" id="who-we-are">
+    <div class="wrap">
+      <div class="mission-grid">
+        <div>
+          <div class="kicker"><span class="num">II.</span> Who We Are</div>
+          <h2 class="mission-head-h2" style="font-size:clamp(32px,3.6vw,46px); line-height:1.14; color:var(--green-deep); max-width:15ch; margin-bottom:30px;">Driven by purpose.</h2>
+          <div class="mission-copy">
+            <p>At Sovereign Agricultural Group, our mission is to empower and sustain American family farms and ranches by providing strategic private equity investment while championing sustainable and regenerative practices. In the face of increasing pressure from foreign investors, we are dedicated to preserving the integrity and independence of these vital components of our nation&rsquo;s agricultural heritage.</p>
+            <p>Through our investments, we not only safeguard the livelihoods of farming families but also ensure the long-term health and resilience of our food systems. By fostering innovation and implementing environmentally responsible practices, we strive to create a brighter future for agriculture, local communities, and the American farmer.</p>
+          </div>
+
+          <div class="pull-quote">
+            <p>&ldquo;Since 2023, the number of American family farms has fallen by 7%. Every year, family farms are lost to foreign investors.&rdquo;</p>
+          </div>
+        </div>
+
+        <div class="pull-figure">
+          <img src="assets/heritage-farmhouse.jpg" alt="A historic American farmhouse, symbol of agricultural heritage">
+          <div class="cap">A legacy worth preserving</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-row-inner">
+        <div class="stat">
+          <div class="num">1.89M</div>
+          <div class="label">US Family Farms</div>
+        </div>
+        <div class="stat">
+          <div class="num">879M</div>
+          <div class="label">Controlled Acres</div>
+        </div>
+        <div class="stat">
+          <div class="num">90%</div>
+          <div class="label">Of Production</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= HOW WE OPERATE ============================= -->
+  <section class="operate">
+    <div class="wrap">
+      <div class="operate-grid">
+        <div class="operate-figure-wrap">
+          <div class="operate-figure">
+            <div class="frame"></div>
+            <img src="assets/farmer-field.png" alt="A farmer surveying his land, a partner of Sovereign Agricultural Group">
+          </div>
+        </div>
+        <div class="operate-head">
+          <div class="kicker"><span class="num">III.</span> How We Operate</div>
+          <h2>Stewards of the land, empowering American farmers.</h2>
+          <p class="operate-copy">Sovereign Agricultural Group recognizes the vital role American farmers play in feeding the nation and preserving our agricultural heritage. However, we also understand the challenges facing these families. Land prices, competition, and economic pressures can threaten the future of independent farms. Our mission goes beyond simply increasing yields. We&rsquo;re committed to keeping American farms in the hands of American farmers for generations to come.</p>
+
+          <div class="principles">
+            <div class="principle">
+              <span class="roman">i.</span>
+              <h4>Empowering Independence</h4>
+              <p>Equipping farmers with the knowledge, resources, and market access needed to remain independent and competitive.</p>
+            </div>
+            <div class="principle">
+              <span class="roman">ii.</span>
+              <h4>Succession Planning</h4>
+              <p>Supporting farm families in developing successful succession plans and profitable exit strategies.</p>
+            </div>
+            <div class="principle">
+              <span class="roman">iii.</span>
+              <h4>Market Access</h4>
+              <p>Connecting producers with fair-trade markets and distribution channels that capture a larger share of profit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CORE AREAS OF INVESTING ============================= -->
+  <section class="areas">
+    <div class="wrap">
+      <div class="areas-head">
+        <div class="kicker center"><span class="num">IV.</span> Core Areas of Investing</div>
+        <h2>Economic viability for long-term success.</h2>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card">
+          <span class="idx">01</span>
+          <h3>Agribusiness</h3>
+          <p>Agribusiness undertakes a multifaceted role in the agricultural sector. From cultivating crops to processing and distributing food products, our responsibilities span the entire agricultural value chain, ensuring efficiency and sustainability while navigating market dynamics.</p>
+        </div>
+        <div class="area-card">
+          <span class="idx">02</span>
+          <h3>Distribution and Logistics</h3>
+          <p>Investments in agricultural technology, precision tools, data analytics, and automation, alongside the transportation infrastructure that streamlines the movement of products from farm to consumer.</p>
+        </div>
+        <div class="area-card">
+          <span class="idx">03</span>
+          <h3>Farming and Crop Production</h3>
+          <p>Row crops, specialty crops, and organic or sustainable farming practices that align with growing consumer demand for environmentally conscious agriculture.</p>
+        </div>
+        <div class="area-card">
+          <span class="idx">04</span>
+          <h3>Food Production</h3>
+          <p>Partnering with companies that transform raw materials into consumable food products, including vertical farming and indoor agriculture in controlled environments.</p>
+        </div>
+        <div class="area-card">
+          <span class="idx">05</span>
+          <h3>Land Acquisitions and Management</h3>
+          <p>Investing in farmland across various states, owning and operating farms, and leasing land to farmers in exchange for a share of the profits.</p>
+        </div>
+        <div class="area-card">
+          <span class="idx">06</span>
+          <h3>Ranching and Livestock Production</h3>
+          <p>Cattle ranches, dairy farms, and other livestock operations, with an emphasis on responsible animal management and environmental considerations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= INVESTOR STRIP ============================= -->
+  <section class="investor-strip">
+    <div class="wrap">
+      <div class="investor-inner">
+        <div>
+          <div class="kicker"><span class="num">V.</span> Invest in American Agriculture</div>
+          <h2>A premier investment opportunity for accredited investors.</h2>
+          <p>We are pleased to introduce a premier investment opportunity tailored for accredited investors within the agriculture sector. Our investment fund presents a compelling avenue for strategic growth and innovation in this dynamic industry.</p>
+        </div>
+        <div>
+          <a href="/investors/" class="btn-outline-dark">Get Investor Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= SELL YOUR BUSINESS CTA ============================= -->
+  <section class="sell-cta" id="sell-your-business">
+    <div class="wrap">
+      <div class="kicker center"><span class="num">VI.</span> Sell Your Business</div>
+      <h2>Committed to the legacy of the American farmer and rancher.</h2>
+      <p>Sovereign Agricultural Group is actively seeking to acquire businesses within the agricultural sector, offering competitive valuation, professional expertise, and a seamless transition that honors your legacy.</p>
+      <div class="actions">
+        <a href="/sell-your-business/" class="btn-cta">Sell Your Business</a>
+        <a href="/contact/" class="btn-outline">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/sovereign-mark-gold.png" alt="Sovereign Agricultural Group mark">
+          <span>
+            <span class="line1" style="display:block;">SOVEREIGN</span>
+            <span class="line2" style="display:block;">Agricultural Group</span>
+          </span>
+        </div>
+        <p class="footer-tag">Our mission is to support and empower family-owned farms and ranches, helping them thrive for generations to come.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="X">X</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="/">Home</a>
+        <a href="/who-we-are/">Who We Are</a>
+        <a href="/what-we-do/">What We Do</a>
+        <a href="/partner-with-us/">Partner With Us</a>
+        <a href="/investors/">Investors</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/sell-your-business/">Sell Your Business</a>
+        <p style="margin-top:24px; color:rgba(247,243,234,0.6);">8:00 AM &ndash; 5:00 PM MST</p>
+        <a href="mailto:info@SovereignAG.com">info@SovereignAG.com</a>
+      </div>
+
+      <div class="footer-col footer-offices">
+        <h5>Offices</h5>
+        <p>Sheridan, Wyoming<br>Corporate Office</p>
+        <p>Billings, Montana<br>Farm &amp; Ranch Operations</p>
+        <p>Scottsdale, Arizona<br>Investor Relations &amp; Compliance</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright &copy; 2025 Sovereign Agricultural Group LLC. All rights reserved.</span>
+    <span><a href="/privacy-policy/">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('primaryNav');
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
